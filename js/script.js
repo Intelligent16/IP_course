@@ -48,7 +48,29 @@ function detectPersonalLvl() {
     console.log("Давай нормально вписывай");
   }
 }
-
 detectPersonalLvl();
+
+function showMyBD() {}
+if (personalMovieDB.privat != false) {
+  console.log(personalMovieDB);
+}
+showMyBD();
+
+function writeYouGeners() {
+  for (let i = 1; i <= 3; i++) {
+    let currentGener = prompt(
+      "Три любимых жанра в порядке убывания любимости",
+      ""
+    );
+    if (currentGener != null && currentGener != "") {
+      personalMovieDB.genres[i - 1] = currentGener;
+      console.log("Спасибо");
+    } else {
+      console.log("Впиши что-нибудь");
+      i--;
+    }
+  }
+}
+writeYouGeners();
 
 console.log(personalMovieDB);
